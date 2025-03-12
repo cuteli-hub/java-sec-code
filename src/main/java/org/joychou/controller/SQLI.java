@@ -62,6 +62,7 @@ public class SQLI {
 
             // sqli vuln code
             Statement statement = con.createStatement();
+            if(username.length() > 5) return "";
             String sql = "select * from users where username = '" + username + "'";
             logger.info(sql);
             ResultSet rs = statement.executeQuery(sql);
